@@ -5,6 +5,13 @@ import Projects from "./Projects";
 function App() {
   return (
     <div>
+      <header>
+        <ul>
+          <li>Home</li>
+          <li>Project</li>
+          <li>About</li>
+        </ul>
+      </header>
       <Home/>
       <About/>
       <Projects/>
