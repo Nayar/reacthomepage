@@ -2,10 +2,13 @@ import Home from "./Home";
 import About from "./About";
 import Projects from "./Projects";
 import {Route, Link, Routes} from "react-router-dom"
+import { useState } from "react";
 
 function App() {
+  const [bgColor, setBgColor] = useState('white')
+
   return (
-    <div>
+    <div style={{backgroundColor: bgColor}}>
       <header>
         <ul>
           <li><Link to="/">Home</Link></li>
@@ -22,8 +25,8 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home/>}/>
         <Route path="/project/:name" element={<Projects/>}/>
-        <Route exact path="/about/music" element={<About hobby="Music"/>}/>
-        <Route exact path="/about/swimming" element={<About hobby="Swimming"/>}/>
+        <Route exact path="/about/music" element={<About hobby="Music" changecolor={setBgColor}/>}/>
+        <Route exact path="/about/swimming" element={<About hobby="Swimming" changecolor={setBgColor}/>}/>
         <Route exact path="/h1" element={<h1>Hello</h1>}/>
       </Routes>
     </div>
