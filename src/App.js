@@ -14,13 +14,16 @@ function App() {
           <li><Link to="/project/javascript">Project: Javascript</Link></li>
           <li><Link to="/project/python">Project: Python</Link></li>
           <li><Link to="/about">About</Link></li>
+          <li><Link to="/about/music">About music</Link></li>
+          <li><Link to="/about/swimming">About swiming</Link></li>
           <li><Link to="/h1">h1</Link></li>
         </ul>
       </header>
       <Routes>
         <Route exact path="/" element={<Home/>}/>
         <Route path="/project/:name" element={<Projects/>}/>
-        <Route exact path="/about" element={<About/>}/>
+        <Route exact path="/about/music" element={<About hobby="Music"/>}/>
+        <Route exact path="/about/swimming" element={<About hobby="Swimming"/>}/>
         <Route exact path="/h1" element={<h1>Hello</h1>}/>
       </Routes>
     </div>
